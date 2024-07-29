@@ -12,6 +12,7 @@ namespace BaseProject.Controllers
         public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public IActionResult Login()
@@ -32,6 +33,13 @@ namespace BaseProject.Controllers
             }
             return RedirectToAction(nameof(HomeController.Index), "Home");
 
+        }
+
+        
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction(nameof(HomeController.Index),"Home");
         }
 
     }
