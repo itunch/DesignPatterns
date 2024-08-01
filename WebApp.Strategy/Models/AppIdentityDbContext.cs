@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebApp.Strategy.Models;
 
-namespace BaseProject.Models
+namespace WebApp.Strategy.Models
 {
     public class AppIdentityDbContext:IdentityDbContext<AppUser>
     {

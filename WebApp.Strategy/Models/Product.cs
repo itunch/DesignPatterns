@@ -17,9 +17,14 @@ namespace WebApp.Strategy.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
         public int Stock { get; set; }
+
+        
         public string UserId { get; set; } = string.Empty;
 
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime CreatedDate { get; set; }
+
+        [BsonRepresentation(BsonType.DateTime)]
+        public DateTime UpdateDate { get; set; }
     }
 }

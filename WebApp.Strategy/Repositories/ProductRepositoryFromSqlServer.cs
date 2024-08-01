@@ -1,5 +1,4 @@
-﻿using BaseProject.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WebApp.Strategy.Models;
 
 namespace WebApp.Strategy.Repositories
@@ -29,6 +28,7 @@ namespace WebApp.Strategy.Repositories
 
         public async Task<Product> Save(Product product)
         {
+            product.Id=Guid.NewGuid().ToString();
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
             return product;
